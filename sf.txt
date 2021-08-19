@@ -1,0 +1,48 @@
+Symfony 
+composer create-project symfony/website-skeleton:"^4.4" my_project_name
+
+Server
+php -S localhost:8000 -t public
+
+Comandos
+bin/console
+
+Instalando o server:
+composer req webserver
+
+Instalando o make:
+composer req make
+
+Instalando as Annotation:
+composer req annotation
+
+criando uma rota:
+bin/console make:controller
+
+Instalando o doctrine:
+composer req orm
+
+Criando um banco no doctrine:
+bin/console doctrine:database:create
+
+Criando uma entidade:
+bin/console make:entity
+
+Criando schema
+bin/console doctrine:schema:create
+
+Verificando a schema a ser criada
+bin/console doctrine:schema:create --dump-sql
+
+Executando uma query:
+bin/console doctrine:query:sql "Minha query"
+
+Adicionando o symfony form ao projeto
+composer req form
+
+Instalando o twig 
+composer req template
+
+Criando um formulário:
+bin/console make:form
+

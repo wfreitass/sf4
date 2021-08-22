@@ -1,10 +1,20 @@
 {% extends 'admin/admin_layout.html.twig' %}
 
 {% block body %}
-<h1>Criar Novo Post</h1>
-<hr>
-{{form_start(form)}}
-{{form_widget(form)}}
-<button type="submit">Enviar</button>
-{{form_end(form)}}
+<section class="content-header">
+    <h1>
+    Pots
+    <small>Criar Post</small>
+    </h1>
+    <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Dashboard</li>
+    </ol>
+</section>
+<section class="content">
+    {{form_start(form)}}
+    {{form_widget(form)}}
+    <button type="submit" class="btn btn-success btn-lg">Criar Post</button>
+    {{form_end(form)}}
+</section>
 {% endblock %}

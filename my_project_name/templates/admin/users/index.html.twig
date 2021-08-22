@@ -1,12 +1,26 @@
 {% extends 'admin/admin_layout.html.twig' %}
 
 {% block body %}
+<section class="content-header">
+    <h1>
+    Usuários
+    <small>Autores Cadastrados</small>
+    </h1>
+    <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Dashboard</li>
+    </ol>
+</section>
 
+<!-- Main content -->
+<section class="content">
 {%include 'includes/messages.html.twig'%}
-<h1>Usuários</h1>
-<a href="{{path('admin_user_new')}}">Criar Usuário</a>
-<hr>
-<table>
+
+<div class="col-md-12">
+    <a href="{{path('admin_user_new')}}" class="btn  btn-success">Criar Usuário</a>
+</div>
+
+<table class="table table-striped">
     <thead>
         <tr>
             <th>#</th>
@@ -32,4 +46,5 @@
         {% endfor %}
     </tbody>
 </table>
+</section>
 {% endblock %}

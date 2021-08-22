@@ -1,33 +1,45 @@
 {% extends 'admin/admin_layout.html.twig' %}
 
 {% block body %}
-
+<section class="content-header">
+    <h1>
+    Pots
+    <small>Suas Postagens</small>
+    </h1>
+    <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Dashboard</li>
+    </ol>
+</section>
 {%include 'includes/messages.html.twig'%}
-<h1>Posts</h1>
-<a href="{{path('admin_post_new')}}">Criar Post</a>
-<hr>
-<table>
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Título</th>
-            <th>Criado EM</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for post in posts %}
+<div class="col-md-12">
+    <a href="{{path('admin_post_new')}}" class="btn  btn-success"> <i class="fa fa-book">Criar Post</i></a>
+</div>
+<section class="content">
+
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>{{post.id}}</td>
-                <td> <a href="{{path('admin_post_update', {'id': post.id})}}">{{post.title}}<a></td>
-                <td>{{post.createdAt|date('d/M/Y H:i:s')}}</td>
-                <td> 
-                    <a href="{{path('admin_post_update', {'id': post.id})}}">Editar<a>
-                    <a href="{{path('admin_post_delete', {'id': post.id})}}">Deletar<a>
-                </td>
-                
+                <th>#</th>
+                <th>Título</th>
+                <th>Criado EM</th>
+                <th>Ações</th>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{post.id}}</td>
+                    <td> <a href="{{path('admin_post_update', {'id': post.id})}}">{{post.title}}<a></td>
+                    <td>{{post.createdAt|date('d/M/Y H:i:s')}}</td>
+                    <td> 
+                        <a href="{{path('admin_post_update', {'id': post.id})}}" class="btn btn-sm btn-default"><i class="fa fa-edit"></i><a>
+                        <a href="{{path('admin_post_delete', {'id': post.id})}}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i><a>
+                    </td>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
 {% endblock %}

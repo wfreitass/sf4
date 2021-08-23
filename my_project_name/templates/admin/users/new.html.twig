@@ -12,13 +12,11 @@
     </ol>
 </section>
 <section class="content">
-    {{form_start(form)}}
+    {{ form_start(form, {'attr':{'novalidate':'novalidate'}})}}
     {{form_widget(form)}}
+    <button type="submit" class="btn btn-success btn-lg">Criar usuário</button>
+    {{form_end(form)}}
 </section>
-
-<button type="submit">Criar usuário</button>
-
-{{form_end(form)}}
 
 
 {% endblock %}

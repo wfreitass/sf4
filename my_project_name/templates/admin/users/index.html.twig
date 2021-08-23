@@ -38,8 +38,8 @@
                 <td> <a href="{{path('admin_user_update', {'id': user.id})}}">{{user.email}}<a></td>
                 <td>{{user.createdAt|date('d/M/Y H:i:s')}}</td>
                 <td> 
-                    <a href="{{path('admin_user_update', {'id': user.id})}}">Editar<a>
-                    <a href="{{path('admin_user_delete', {'id': user.id})}}">Deletar<a>
+                    <a href="{{path('admin_user_update', {'id': user.id})}}" class="btn btn-sm btn-default"><i class="fa fa-edit"></i><a>
+                    <a href="{{path('admin_user_delete', {'id': user.id})}}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i><a>
                 </td>
                 
             </tr>
